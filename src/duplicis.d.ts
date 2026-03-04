@@ -113,7 +113,7 @@ export namespace Duplicis {
     open(plugin?: PluginConstructor): string | undefined
     opened(): string | undefined
     toast(msg: ToastMessage): string
-    toastOnce(id: string, msg: Options): string
+    toastOnce(id: string, msg: ToastMessage): string
     toastDismiss(id?: string): void
     toastUpdate(id: string, msg: Partial<ToastMessage>): string
     toastVisible(id?: string): boolean

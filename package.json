@@ -23,13 +23,13 @@
   "devDependencies": {
     "@duplicis/config": "workspace:*",
     "@duplicis/i18n": "workspace:*",
-    "@zag-js/toast": "^1.34.1",
+    "@zag-js/toast": "^1.35.3",
     "@schemastore/package": "^0.0.10",
     "component-emitter": "^2.0.0"
   },
   "peerDependencies": {
-    "typedoc": "^0.28.13",
-    "typescript": "^5.9.2",
-    "svelte": "^5.45.9"
+    "typedoc": "^0.28.17",
+    "typescript": "^5.9.3",
+    "svelte": "^5.53.7"
   }
 }
