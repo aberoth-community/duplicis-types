@@ -1,0 +1,35 @@
+{
+  "name": "@duplicis/types",
+  "description": "Duplicis client typing",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "./src/index.d.ts",
+  "exports": {
+    ".": "./src/index.d.ts",
+    "./aberoth": "./src/aberoth.d.ts",
+    "./duplicis": "./src/duplicis.d.ts",
+    "./client": "./src/client/index.d.ts",
+    "./client/globals": "./src/client/globals.d.ts",
+    "./client/core": "./src/client/core.d.ts",
+    "./package-json": "./src/package-json.d.ts",
+    "./unit": "./src/unit.d.ts"
+  },
+  "scripts": {
+    "format": "pnpm --workspace-root run format",
+    "lint": "pnpm --workspace-root run lint",
+    "lint:tsc": "tsc",
+    "docs": "typedoc"
+  },
+  "devDependencies": {
+    "@duplicis/config": "workspace:*",
+    "@duplicis/i18n": "workspace:*",
+    "@zag-js/toast": "^1.34.1",
+    "@schemastore/package": "^0.0.10",
+    "component-emitter": "^2.0.0"
+  },
+  "peerDependencies": {
+    "typedoc": "^0.28.13",
+    "typescript": "^5.9.2",
+    "svelte": "^5.45.9"
+  }
+}
