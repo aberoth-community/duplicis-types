@@ -50,6 +50,15 @@ export namespace Duplicis {
       min?: number
     }
 
+    /** Numeric input options. */
+    export interface Number extends Base {
+      default?: number
+      i18n?: i18n
+      max?: number
+      min?: number
+      step?: number
+    }
+
     /** Range slider options. */
     export interface Range extends Base {
       default?: number
@@ -87,6 +96,7 @@ export namespace Duplicis {
       bool: Bool
       hotkey: Hotkey
       int: Int
+      number: Number
       range: Range
       select: Select
       text: Text
