@@ -26,6 +26,8 @@ export namespace Duplicis {
     export interface Base {
       default?: unknown
       i18n?: i18n
+      /** Persist the binding without displaying it in the plugin's settings. */
+      hidden?: boolean
     }
 
     /** Boolean options. */
