@@ -1,4 +1,4 @@
-import type Duplicis from './duplicis';
+import type Duplicis from './duplicis'
 import type { ColorHex, Scale, Vec2 } from './unit'
 
 export type Disposer = () => void
