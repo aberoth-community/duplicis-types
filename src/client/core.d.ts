@@ -1,12 +1,12 @@
 declare module '@duplicis/core' {
-  import type { Duplicis } from '@duplicis/types'
+  import type { Duplicis, GameColors, GameConstants } from '@duplicis/types'
 
   export const Plugin: Duplicis.PluginConstructor
   export const PluginI18n: Duplicis.PluginI18nConstructor
   export const FrameworkPlugin: Duplicis.FrameworkPluginConstructor
 
-  export const GameConstants: import('../plugin-utils').GameConstants
-  export const GameColors: import('../plugin-utils').GameColors
+  export const GameConstants: GameConstants
+  export const GameColors: GameColors
 
   /** Duplicis client */
   export const client: Duplicis.Client

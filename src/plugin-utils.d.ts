@@ -1,4 +1,10 @@
-import type { Scale, Vec2 } from './unit'
+import type Duplicis from './duplicis';
+import type { ColorHex, Scale, Vec2 } from './unit'
+
+export type Disposer = () => void
+export type UtilityResult =
+  { status: 'ok' } | { status: 'not-ready' | 'unsupported-client' | 'invalid-argument' | 'failed' }
+export type TextIntent = 'notification' | 'hint' | 'raw'
 
 /** Shared, runtime game constants (available from @duplicis/core). */
 export interface GameConstants {
@@ -43,20 +49,16 @@ export interface GameConstants {
 }
 
 export interface GameColors {
-  readonly FriendlyName: '#ffffff'
-  readonly HarmonyName: '#dcffdc'
-  readonly UnfriendlyName: '#ffafaf'
-  readonly PlayerDamage: '#ffff00'
-  readonly MobDamage: '#ff8080'
-  readonly MobDeath: '#ff0000'
-  readonly Poison: '#67dc33'
-  readonly Ember: '#ffc800'
-  readonly Drain: '#808080'
+  readonly FriendlyName: ColorHex
+  readonly HarmonyName: ColorHex
+  readonly UnfriendlyName: ColorHex
+  readonly PlayerDamage: ColorHex
+  readonly MobDamage: ColorHex
+  readonly MobDeath: ColorHex
+  readonly Poison: ColorHex
+  readonly Ember: ColorHex
+  readonly Drain: ColorHex
 }
-
-export type Disposer = () => void
-export type UtilityResult =
-  { status: 'ok' } | { status: 'not-ready' | 'unsupported-client' | 'invalid-argument' | 'failed' }
 
 export interface UtilitySession {
   readonly id: number
@@ -75,7 +77,6 @@ export interface TextCommand extends Vec2 {
   specialY: boolean
 }
 
-export type TextIntent = 'notification' | 'hint' | 'raw'
 export interface TextEvent {
   /** Existing native slot content, provided transiently for preservation transforms. */
   readonly previousText?: string
@@ -187,5 +188,5 @@ export interface PluginUtils {
   readonly helpers: UtilityHelpers
   readonly names: UtilityNames
   readonly session: { getSnapshot(): UtilitySession }
-  forPlugin(plugin: import('./duplicis').Duplicis.Plugin): PluginUtilsScope
+  forPlugin(plugin: Duplicis.Plugin): PluginUtilsScope
 }

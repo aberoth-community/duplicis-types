@@ -2,6 +2,7 @@ import type Emitter from 'component-emitter'
 import type { Snippet } from 'svelte'
 import type { Aberoth } from './aberoth'
 import type { PackageJSON } from './package-json'
+import type { PluginUtils } from './plugin-utils'
 import type { Awaitable, TypedTranslationFunctions } from './unit'
 import type { Options as ToastMessage } from '@zag-js/toast'
 import type { BaseTranslation, Locales, TranslationFunctions } from '@duplicis/i18n'
@@ -149,7 +150,7 @@ export namespace Duplicis {
     readonly game?: Aberoth.Game
     readonly sidebar: ClientSidebar
     /** Shared, owner-scoped game utilities for built-in and external plugins. */
-    readonly pluginUtils: import('./plugin-utils').PluginUtils
+    readonly pluginUtils: PluginUtils
     login(username?: string | null, password?: string | null, profile?: string | null): void
     logout(): void
     reload(

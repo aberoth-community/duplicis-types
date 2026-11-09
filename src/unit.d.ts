@@ -4,7 +4,7 @@ export type Awaitable<T> = Promise<T> | T
 /** Generic color string */
 export type Color = ColorHex | ColorRgb | ColorRgba
 
-export type ColorHex = `#${number}`
+export type ColorHex = `#${string}`
 export type ColorRgb = `RGB(${number}, ${number}, ${number})`
 export type ColorRgba = `RGBA(${number}, ${number}, ${number}, ${number})`
 
