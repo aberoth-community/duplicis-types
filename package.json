@@ -11,8 +11,11 @@
     "./client": "./src/client/index.d.ts",
     "./client/globals": "./src/client/globals.d.ts",
     "./client/core": "./src/client/core.d.ts",
+    "./client/plugins": "./src/client/plugins.d.ts",
     "./package-json": "./src/package-json.d.ts",
-    "./unit": "./src/unit.d.ts"
+    "./unit": "./src/unit.d.ts",
+    "./plugin-utils": "./src/plugin-utils.d.ts",
+    "./chat-system": "./src/chat-system.d.ts"
   },
   "scripts": {
     "format": "pnpm --workspace-root run format",

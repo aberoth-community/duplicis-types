@@ -148,6 +148,8 @@ export namespace Duplicis {
     readonly app?: Aberoth.App
     readonly game?: Aberoth.Game
     readonly sidebar: ClientSidebar
+    /** Shared, owner-scoped game utilities for built-in and external plugins. */
+    readonly pluginUtils: import('./plugin-utils').PluginUtils
     login(username?: string | null, password?: string | null, profile?: string | null): void
     logout(): void
     reload(
