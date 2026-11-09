@@ -125,6 +125,8 @@ export namespace Duplicis {
     close(): void
     open(plugin?: PluginConstructor): string | undefined
     opened(): string | undefined
+    /** Show or hide this plugin's sidebar icon without disabling the plugin. */
+    setIconVisible(plugin: Plugin, visible: boolean): void
     toast(msg: ToastMessage): string
     toastOnce(id: string, msg: ToastMessage): string
     toastDismiss(id?: string): void
