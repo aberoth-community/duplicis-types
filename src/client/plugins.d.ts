@@ -19,7 +19,9 @@ declare module '@duplicis/plugin-chat-system' {
   export const AppMixin: Duplicis.Target<import('@duplicis/types').Aberoth.AppConstructor>
   export const MAX_SPEECH_LENGTH: 229
   export const INDICATOR_THRESHOLD: 6
+  /** Available after chat onLoad(); undefined before initialization and after teardown. */
   export function getChatSystem(): ChatSystemApi | undefined
+  /** Register during the owner's onLoad(). Returns a disposer; owner exit also unregisters it. */
   export function registerCommand(command: ChatCommand): Disposer
   export type {
     ChatCommand,
