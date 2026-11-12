@@ -55,6 +55,10 @@ export interface GameColors {
   readonly PlayerDamage: ColorHex
   readonly MobDamage: ColorHex
   readonly MobDeath: ColorHex
+  readonly Health: ColorHex
+  readonly MissingHealth: ColorHex
+  readonly ThirstyHealth: ColorHex
+  readonly DiseasedHealth: ColorHex
   readonly Poison: ColorHex
   readonly Ember: ColorHex
   readonly Drain: ColorHex
