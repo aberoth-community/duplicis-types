@@ -122,6 +122,8 @@ export interface UtilityText {
 }
 
 export interface UtilityNames {
+  /** Known NPC/mob label, matched case-insensitively. False does not prove a name is a player. */
+  isNpcName(name: string): boolean
   isNameColor(color: unknown): boolean
   isSpecificName(text: string, color: unknown, name: string): boolean
   findPlayerText(): RenderedText | undefined
