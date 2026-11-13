@@ -129,6 +129,10 @@ export interface UtilityNames {
 }
 
 export interface UtilityHelpers {
+  /** Hex (#rgb/#rgba/#rrggbb/#rrggbbaa), comma-separated rgb()/rgba(), or white. Invalid input returns undefined. */
+  toRgba(color: unknown): string | undefined
+  /** Single ASCII letter/digit, Space, or Escape. Modifiers and other names return undefined. */
+  keyCode(key: unknown): number | undefined
   isItemWindow(id: number): boolean
   isAccessoryWindow(id: number): boolean
   isEditableTarget(event: Event, activeElement?: Element | null): boolean
