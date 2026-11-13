@@ -128,7 +128,14 @@ export interface UtilityNames {
   findAuthor(origin: Vec2 & { offset: number; windowId?: number }): string | undefined
 }
 
+export interface ItemGridAnchors {
+  readonly accessoriesTopRight: Readonly<Vec2>
+  readonly inventoryBottomRight: Readonly<Vec2>
+}
+
 export interface UtilityHelpers {
+  /** Fixed group anchors in canvas pixels; scale is game scale, not item scale. Invalid geometry throws RangeError. */
+  itemGridAnchors(width: number, height: number, scale: number): ItemGridAnchors
   /** Hex (#rgb/#rgba/#rrggbb/#rrggbbaa), comma-separated rgb()/rgba(), or white. Invalid input returns undefined. */
   toRgba(color: unknown): string | undefined
   /** Single ASCII letter/digit, Space, or Escape. Modifiers and other names return undefined. */
