@@ -2,6 +2,15 @@ import type Duplicis from './duplicis'
 import type { ColorHex, Scale, Vec2 } from './unit'
 
 export type Disposer = () => void
+export type KeyBindingAction = 'up' | 'down' | 'left' | 'right' | 'fight'
+/** Accepted profile configuration, not a server acknowledgement. */
+export type KeyBindingsSnapshot = Readonly<
+  Record<KeyBindingAction, { readonly key: string; readonly code: number }>
+>
+export interface UtilityKeyBindings {
+  /** Undefined while the key-bindings provider is unloaded or its configuration is invalid. */
+  getSnapshot(): KeyBindingsSnapshot | undefined
+}
 export type UtilityResult =
   { status: 'ok' } | { status: 'not-ready' | 'unsupported-client' | 'invalid-argument' | 'failed' }
 export type TextIntent = 'notification' | 'hint' | 'raw'
@@ -178,6 +187,7 @@ export interface UtilityMouse {
 }
 
 export interface PluginUtilsScope {
+  readonly keyBindings: UtilityKeyBindings
   readonly owner: string
   readonly profileId: number | undefined
   readonly active: boolean
@@ -200,6 +210,7 @@ export interface PluginUtilsScope {
 }
 
 export interface PluginUtils {
+  readonly keyBindings: UtilityKeyBindings
   readonly constants: GameConstants
   readonly colors: GameColors
   readonly helpers: UtilityHelpers
